@@ -15,7 +15,9 @@ RestartSec=15
 [Install]
 WantedBy=multi-user.target                    
 ```
-Сервис самостоятельно запускается после остановки
+
+#### Сервис самостоятельно запускается после остановки
+
 ```bash
 denisden@LAPTOP-RMQ088BV:~/vk$ sudo systemctl kill homework.service
 denisden@LAPTOP-RMQ088BV:~/vk$ sudo systemctl status homework.service
@@ -40,7 +42,8 @@ denisden@LAPTOP-RMQ088BV:~/vk$ sudo systemctl status homework.service
 Oct 07 11:39:45 LAPTOP-RMQ088BV systemd[1]: Started My Persistent Script Service.
 Oct 07 11:39:45 LAPTOP-RMQ088BV homework_service.sh[354721]: My custom service has started.
 ```
-топ-5 systemd unit`ов стартующих дольше всего.
+#### топ-5 systemd unit`ов стартующих дольше всего.
+
 ```bash
 denisden@LAPTOP-RMQ088BV:/tmp$ systemd-analyze blame | head -n 5
 4min 23.445s apt-daily.service
@@ -71,6 +74,8 @@ denisden@LAPTOP-RMQ088BV:~$ ps -o pid,user,%mem,rss,vsz,comm -p 410635
 ```
 
 RSS ~250Mb так как python алоцирует память для строки размером 250 Mb и пишет туда данные. Следовательно эти данные должны появиться непосредственно в оперативной памяти. VSZ это общий размер зарезервированного виртуального пространства процесса. Часть этой памяти может быть зарезервирована, но еще никак не использована. Но VSZ включает в себя и все данные RSS. Так как RSS это та часть виртуального пространства, которая сейчас лежит в оперативной памяти. 
+
+
 ## Задание 4
 #### Показать количество NUMA нод
 
@@ -88,6 +93,7 @@ node   0
 ```
 
 #### Детальное описание памяти на кажной ноде
+
 ```bash
 denisden@LAPTOP-RMQ088BV:~$ numastat -m
 
@@ -133,7 +139,7 @@ HugePages_Surp              0.00            0.00
 KReclaimable               90.52           90.52
 ```
 
-При запуске теста, использование памяти никогда не превыет 150 MB
+#### При запуске теста, использование памяти никогда не превыет 150 MB
 
 ```bash
 sudo systemd-run --unit=highload-stress-test --slice=testing.slice \
