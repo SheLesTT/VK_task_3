@@ -262,7 +262,7 @@ Line-based text data: text/html (1 lines)
 
 
 ```
-Ответ природит от сервера 1
+Ответ приходит от сервера 1
 ```bash
 denisden@LAPTOP-RMQ088BV:~$ curl -v http://127.0.0.1:8888/
 *   Trying 127.0.0.1:8888...
@@ -285,7 +285,7 @@ denisden@LAPTOP-RMQ088BV:~$ curl -v http://127.0.0.1:8888/
 * Connection #0 to host 127.0.0.1 left intact
 ```
 
-Останавливаем сервер1
+Останавливаем сервер 1
 ```bash
 denisden@LAPTOP-RMQ088BV:~/backend1$ python3 -m http.server 8081 --bind 127.0.0.1 &
 [1] 62832
@@ -423,17 +423,3 @@ Hypertext Transfer Protocol
     File Data: 48 bytes
 Line-based text data: text/html (1 lines)
 
-
-```
-```bash
-```
-```bash
-```
-```bash
-```
-
-
-
-## Задание 2
-## Задание 3
-## Задание 4
