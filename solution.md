@@ -46,9 +46,8 @@ Oct 07 11:39:45 LAPTOP-RMQ088BV homework_service.sh[354721]: My custom service h
 
 ```bash
 denisden@LAPTOP-RMQ088BV:/tmp$ systemd-analyze blame | head -n 5
-4min 23.445s apt-daily.service
-     25.575s motd-news.service
-     10.088s man-db.service
+
+  10.088s man-db.service
       5.121s logrotate.service
       4.270s apt-daily-upgrade.service
 ```
